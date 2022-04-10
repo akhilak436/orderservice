@@ -24,6 +24,12 @@ public class OrderServiceApplication {
         return orderDao.getOrders().stream().
                 sorted(Comparator.comparing(Order::getPrice)).collect(Collectors.toList());
     }
+    
+    @GetMapping("/hello")
+    public String getMsg() {
+		return "hello this is simple method";
+    	
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(OrderServiceApplication.class, args);
